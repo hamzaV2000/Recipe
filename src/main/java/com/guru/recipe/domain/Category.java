@@ -13,7 +13,7 @@ public class Category {
     private Long id;
 
 
-    @ManyToMany()
+    @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 
     private String description;
@@ -22,26 +22,31 @@ public class Category {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public Set<Recipe> getRecipes() {
+        return this.recipes;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return  description;
     }
 }

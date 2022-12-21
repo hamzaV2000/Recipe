@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
      <h1>My Recipes</h1>
+     <table class="table align-middle mb-0 bg-white">
+         <thead class="bg-light">
+             <tr>
+                 <th></th>
+                 <th th:text="'Recipe'"></th>
+                 <th th:text="'URL'"></th>
+                 <th th:text="'Cock time'"></th>
+                 <th th:text="'Prep time'"></th>
+                 <th th:text="'Difficulty'"></th>
+                 <th th:text="'Servings'"></th>
+                 <th th:text="'Ingredients'"></th>
+                 <th th:text="'Categories'"></th>
+                 <th th:text="'Notes'"></th>
+                 <th th:text="'Directions'"></th>
+             </tr>
+         </thead>
+         <tbody th:each="recipe : ${recipes}">
+
+             <tr>
+                 <td><img style="width: 100px; height: 100px;" th:src="${'data:image/jpeg;charset=utf-8;base64,' + images.get(recipe.id)}" alt=""></td>
+                 <td th:text="${recipe.description}"></td>
+                 <td><a th:href="${recipe.url}" th:text="'Go to Recipe -> '"></a></td>
+                 <td th:text="${recipe.cookTime}"></td>
+                 <td th:text="${recipe.prepTime}"></td>
+                 <td th:text="${recipe.difficulty}"></td>
+                 <td th:text="${recipe.servings}"></td>
+                 <td th:text="${recipe.ingredients}"></td>
+                 <td th:text="${recipe.categories}"></td>
+                 <td th:text="${recipe.notes}"></td>
+                 <td th:text="${recipe.directions}"></td>
+             </tr>
+
+         </tbody>
+
+     </table>
 </body>
 </html>
