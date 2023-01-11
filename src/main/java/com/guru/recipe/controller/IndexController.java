@@ -40,10 +40,13 @@ public class IndexController {
         Map<Long, String> productBase64Images = new HashMap<>();
         if(recipes == null )
             recipes = recipeService.getRecipes();
-        System.out.println(recipes);
-   //     for(Recipe recipe: recipes){
-   //         productBase64Images.put(recipe.getId(), Base64.getEncoder().encodeToString(recipe.getImage()));
-      //  }
+
+
+
+        for(Recipe recipe: recipes){
+            if(recipe.getImage() != null)
+                productBase64Images.put(recipe.getId(), Base64.getEncoder().encodeToString(recipe.getImage()));
+        }
 
         model.addAttribute("images", productBase64Images);
         model.addAttribute("recipes", recipes);

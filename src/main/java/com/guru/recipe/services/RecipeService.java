@@ -1,11 +1,16 @@
 package com.guru.recipe.services;
 
+
+import com.guru.recipe.commands.RecipeCommand;
 import com.guru.recipe.domain.Recipe;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.Set;
 
 public interface RecipeService {
 
-    public Set<Recipe> getRecipes();
+    Set<Recipe> getRecipes();
+
+    Recipe findById(Long l);
+
+    RecipeCommand saveRecipeCommand(RecipeCommand command);
 }

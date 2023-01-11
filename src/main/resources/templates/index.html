@@ -28,7 +28,7 @@
              <tr>
                  <td><img style="width: 100px; height: 100px;" th:src="${'data:image/jpeg;charset=utf-8;base64,' + images.get(recipe.id)}" alt=""></td>
                  <td th:text="${recipe.description}"></td>
-                 <td><a th:href="${recipe.url}" th:text="'Go to Recipe -> '"></a></td>
+                 <td><a th:href="@{'recipe/show/' + ${recipe.getId()}}" th:text="'Go to Recipe -> '"></a></td>
                  <td th:text="${recipe.cookTime}"></td>
                  <td th:text="${recipe.prepTime}"></td>
                  <td th:text="${recipe.difficulty}"></td>
