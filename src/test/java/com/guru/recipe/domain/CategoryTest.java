@@ -1,35 +1,37 @@
 package com.guru.recipe.domain;
 
-import org.aspectj.lang.annotation.Before;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-class CategoryTest {
-    private Category category;
-    @BeforeEach
-    public void setup(){
-        System.out.println("before each");
+/**
+ * Created by jt on 6/17/17.
+ */
+public class CategoryTest {
+
+    Category category;
+
+    @Before
+    public void setUp(){
         category = new Category();
     }
-    @Test
-    void getId() {
-        Long id = 4L;
-        category.setId(id);
 
-        assertEquals(id, category.getId());
+    @Test
+    public void getId() throws Exception {
+        Long idValue = 4L;
+
+        category.setId(idValue);
+
+        assertEquals(idValue, category.getId());
     }
 
     @Test
-    void getRecipes() {
+    public void getDescription() throws Exception {
     }
 
     @Test
-    void getDescription() {
+    public void getRecipes() throws Exception {
     }
+
 }

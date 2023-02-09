@@ -3,6 +3,7 @@ package com.guru.recipe.domain;
 
 import jakarta.persistence.*;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -82,7 +83,11 @@ public class Recipe {
     }
 
     public byte[] getImage() {
-        return this.image;
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public Notes getNotes() {
@@ -137,9 +142,7 @@ public class Recipe {
         this.directions = directions;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+
 
     public void setNotes(Notes notes) {
         this.notes = notes;
